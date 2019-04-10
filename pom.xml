@@ -26,47 +26,76 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <dubbo.version>2.7.1</dubbo.version>    
+    <nacos-config-spring-boot.version>0.2.1</nacos-config-spring-boot.version>
+    <dubbo.version>2.6.5</dubbo.version>    
   </properties>
   
   <dependencies>
-	<dependency>
+    <dependency>
         <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+        
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        <version>0.2.0.RELEASE</version>
+    </dependency>
+            
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-	    <!-- Dubbo Spring Boot Starter -->
+    <dependency>
+        <groupId>com.alibaba.boot</groupId>
+        <artifactId>nacos-config-spring-boot-starter</artifactId>
+        <version>${nacos-config-spring-boot.version}</version>
+    </dependency>
+
+    <dependency>
+        <groupId>com.alibaba.boot</groupId>
+        <artifactId>nacos-config-spring-boot-actuator</artifactId>
+        <version>${nacos-config-spring-boot.version}</version>
+    </dependency>
+
+    <!-- Dubbo Nacos registry dependency -->
+    <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>dubbo-registry-nacos</artifactId>
+        <version>0.0.1</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <scope>test</scope>
+    </dependency>
+ <!-- Dubbo Spring Boot Starter -->
 	    <dependency>
-	        <groupId>org.apache.dubbo</groupId>
+	        <groupId>com.alibaba.boot</groupId>
 	        <artifactId>dubbo-spring-boot-starter</artifactId>
-	        <version>${dubbo.version}</version>
+	        <version>0.2.1.RELEASE</version>
 	    </dependency>
 	    
 	    <dependency>
-	        <groupId>org.apache.dubbo</groupId>
-	        <artifactId>dubbo</artifactId>
-	        <version>${dubbo.version}</version>
-	    </dependency>
-<!-- 	    <dependency> -->
-<!-- 	        <groupId>io.netty</groupId> -->
-<!-- 	        <artifactId>netty-all</artifactId> -->
-<!-- 	    </dependency>	     -->
+<!-- 	        <groupId>org.apache.dubbo</groupId> -->
+     <groupId>com.alibaba</groupId>
+     <artifactId>dubbo</artifactId>
+     <version>${dubbo.version}</version>
+	 </dependency>
+	   <!-- Alibaba Spring Context extension -->
 	    <dependency>
-	      <groupId>junit</groupId>
-	      <artifactId>junit</artifactId>
-	      <scope>test</scope>
+	        <groupId>com.alibaba.spring</groupId>
+	        <artifactId>spring-context-support</artifactId>
+	        <version>1.0.2</version>
 	    </dependency>
-	</dependencies>
+	 <dependency>
+	   <groupId>junit</groupId>
+	   <artifactId>junit</artifactId>
+	   <scope>test</scope>
+	 </dependency>
+  </dependencies>
 
   <repositories>
     <repository>
