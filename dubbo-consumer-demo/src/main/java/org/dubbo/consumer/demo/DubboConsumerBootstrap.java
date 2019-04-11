@@ -22,7 +22,7 @@ import com.alibaba.dubbo.config.annotation.Reference;
 public class DubboConsumerBootstrap 
 {
 	private final Logger logger = LoggerFactory.getLogger(getClass());
-	@Reference(version = "1.0.0", url = "dubbo://localhost:12345")
+	@Reference(version = "1.0.0", url = "dubbo://localhost:8848")
     private DemoService demoService;
 
     @Bean
